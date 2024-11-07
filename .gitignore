@@ -59,6 +59,3 @@ data_*/
 
 # C++ CMake
 **/cmake-build-debug/
-
-### protocol ###
-src/protocol/
