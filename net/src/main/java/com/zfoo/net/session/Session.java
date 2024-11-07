@@ -38,8 +38,12 @@ public class Session implements Closeable {
     /**
      * EN:The default user ID is an ID greater than 0, or equal 0 if there is no login, user extra parameters
      * CN:默认用户的id都是大于0的id，如果没有登录则等于0，用户额外参数
+     * 这里是playerId
      */
     private long uid = 0;
+
+    //accountId
+    private long aid = 0;
 
     /**
      * EN:Session extra parameters
@@ -96,6 +100,14 @@ public class Session implements Closeable {
 
     public void setUid(long uid) {
         this.uid = uid;
+    }
+
+    public long getAid() {
+        return aid;
+    }
+
+    public void setAid(long aid) {
+        this.aid = aid;
     }
 
     public Register getConsumerRegister() {

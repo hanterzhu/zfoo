@@ -109,7 +109,9 @@ public class StorageManager implements IStorageManager {
                     continue;
                 }
                 ReflectionUtils.assertIsPojoClass(clazz);
-                ReflectionUtils.publicEmptyConstructor(clazz);
+                if (!clazz.isEnum()) {
+                    ReflectionUtils.publicEmptyConstructor(clazz);
+                }
                 var fieldList = ReflectionUtils.notStaticAndTransientFields(clazz);
                 for (var field : fieldList) {
                     if (Modifier.isPublic(field.getModifiers())) {

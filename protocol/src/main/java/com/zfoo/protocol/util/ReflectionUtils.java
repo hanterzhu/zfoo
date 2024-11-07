@@ -75,7 +75,7 @@ public abstract class ReflectionUtils {
     }
 
     public static boolean isPojoClass(Class<?> clazz) {
-        return clazz.getSuperclass().equals(Object.class) || clazz.isRecord();
+        return clazz.getSuperclass().equals(Object.class) || clazz.isRecord() || clazz.isEnum();
     }
 
     public static void assertIsPojoClass(Class<?> clazz) {
